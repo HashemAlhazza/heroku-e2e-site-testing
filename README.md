@@ -32,24 +32,23 @@ To compare the two frameworks:
 
 This project is structured into two main directories: `Python_Playwright` and `Python_Selenium`. Each has its own set of tests that can be run independently using `pytest`.
 
-> ℹ️ **Note:** All commands below should be executed from the root directory of the project.
+> ℹ️ **Note:** All commands below should be executed from within each Framework foler root directory.
 
 #### ▶️ Run Playwright Tests
 
-1.  **Change to the Playwright directory:**
+1.  **Change to the Python_Playwright directory:**
     ```bash
     cd Python_Playwright
     ```
 2.  **Run the tests:**
     -   To run the traditional scripted tests (`test_two.py`):
-        ```bash
+        ```powershell
         pytest test_two.py -v --headed
         ```
     -   To run the BDD-style tests (`.feature` file):
-        ```bash
-        pytest --headed
+        ```powershell
+        pytest test_two_steps.py -s -v --headed
         ```
-        > The `pytest-bdd` framework automatically discovers the `.feature` files and their corresponding step definitions, so you don't need to specify the file name.
 
 #### ▶️ Run Selenium Tests
 
@@ -58,7 +57,7 @@ This project is structured into two main directories: `Python_Playwright` and `P
     cd Python_Selenium
     ```
 2.  **Run the tests:**
-    ```bash
+    ```powershell
     pytest test_one.py -v
     ```
     > ℹ️ **Note:** Selenium tests do not need the `--headed` flag, as the browser is always visible by default unless configured otherwise.
